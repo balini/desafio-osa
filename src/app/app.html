@@ -1,7 +1,7 @@
 <section *ngIf="!isAuthenticated()" class="google-button">
   <h3 class="margin-20">Gestão de clientes (Backoffice)</h3>
 </section>
-<div class="google-button" id="google-button"></div>
+<div [hidden]="isAuthenticated()" class="google-button" id="google-button"></div>
 
 <div *ngIf="isAuthenticated()">
     <router-outlet></router-outlet>
