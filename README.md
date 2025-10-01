@@ -1,59 +1,90 @@
-# App
+# Backoffice Angular com Biblioteca Customizada
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.2.
+Este projeto é uma aplicação de **backoffice** desenvolvida em **Angular**, utilizando uma **biblioteca própria** para construção da interface (`<ds-input>`). A aplicação permite **CRUD completo** (Criar, Ler, Atualizar e Deletar) de clientes, com uma interface pensada para uma boa experiência de backoffice.
 
-## Development server
+---
 
-To start a local development server, run:
+## 📄 Sobre a aplicação
+
+Trata-se de uma tela de backoffice com Angular, garantindo:
+
+- Uso de Angular como framework principal;
+- Desenvolvimento de uma biblioteca própria para UI (não usar frameworks externos);
+- Implementação de todas as operações de CRUD;
+- Layout organizado e funcional para backoffice;
+- Integração com API mockada (JSON-Server) para demonstração da integração do front com back-end;
+- Sistema de autenticação com Google.
+
+---
+
+## 🏗 Estrutura do projeto
+
+```
+/src
+ ├─ /app
+ │   ├─ /backoffice
+ │   │   ├─ backoffice.component.ts
+ │   │   ├─ backoffice.component.html
+ │   │   └─ backoffice.component.css
+ │   ├─ /lib
+ │   │   └─ /ds-input
+ │   │       ├─ ds-input.component.ts
+ │   │       └─ ds-input.component.html
+ │   └─ app.component.ts
+ └─ main.ts
+ ```
+
+- **backoffice.component.ts** → componente principal da tela de backoffice, implementa CRUD e integração com `ClienteService`.
+- **ds-input.component.ts** → componente da biblioteca, oferece inputs customizados.
+- **ClienteService** → serviço Angular que realiza chamadas HTTP para o backend (mockado).
+
+---
+
+## ⚡ Funcionalidades
+
+### Backoffice
+
+- Listagem de clientes (`GET` e `GET/:id`);
+- Criação de novos clientes (`POST`);
+- Edição de clientes existentes (`PUT`);
+- Exclusão de clientes (`DELETE`);
+- Pesquisa por nome;
+- Modal dinâmico para criação/edição de clientes.
+
+### Biblioteca DS Input
+
+- Componente `<ds-input>`;
+- Inputs com label, placeholder e validação;
+- Suporte a eventos `valueChange`;
+- Facilita padronização de inputs na aplicação.
+
+### Autenticação
+
+- Integração com **Google Identity Services**;
+- Botão de login renderizado dinamicamente;
+- Flag de autenticação para condicionar a exibição da aplicação.
+
+---
+
+## 💻 Rodando a aplicação
 
 ```bash
-ng serve
+npm install 
+npm start
+npm run start:json-server
 ```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🧪 Testes
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- Carrega clientes no init;
+- Cria, edita e exclui clientes via HTTP mockado;
+- Filtra clientes por nome;
+- Testa emissão de eventos valueChange;
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
