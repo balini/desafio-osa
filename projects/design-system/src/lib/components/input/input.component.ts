@@ -12,7 +12,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     }
   ],
   standalone: false,
-  styleUrls: ['./input.component.scss']
+  styleUrls: ['./input.component.css']
 })
 export class InputComponent implements ControlValueAccessor {
   value = '';

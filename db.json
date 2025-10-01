@@ -1,14 +1,6 @@
 {
   "clientes": [
     {
-      "id": "2",
-      "nome": "Maria Santos",
-      "email": "maria@example.com",
-      "telefone": "2222-2222",
-      "agencia": "5678",
-      "conta": "6789-0"
-    },
-    {
       "id": "3",
       "nome": "Ricardo Costa",
       "email": "ricardo@example.com",
@@ -65,10 +57,12 @@
       "conta": "33458-0"
     },
     {
-      "id": "eabe",
-      "nome": "ggg",
-      "email": "ggg",
-      "telefone": "gggg"
+      "id": "7eab",
+      "nome": "Maria Santos",
+      "email": "maria@example.com",
+      "telefone": "2345-9856",
+      "agencia": "3312",
+      "conta": "88373020-9"
     }
   ]
 }

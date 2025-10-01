@@ -5,7 +5,7 @@ import { Cliente } from '../../interfaces/cliente.interface';
 @Component({
   selector: 'app-backoffice',
   templateUrl: './backoffice.component.html',
-  styleUrls: ['./backoffice.component.scss'],
+  styleUrls: ['./backoffice.component.css'],
   standalone: false
 })
 export class BackofficeComponent implements OnInit {
@@ -13,7 +13,7 @@ export class BackofficeComponent implements OnInit {
   searchTerm = '';
   modalVisible = false;
   editingCliente: Cliente = { nome: '', email: '', telefone: '', agencia: '', conta: '' };
-  columns = ['nome', 'email', 'telefone', 'agencia', 'conta', 'acoes'];
+  columns = ['nome', 'email', 'telefone', 'agencia', 'conta', 'ações'];
 
   constructor(private http: HttpClient) {}
 

@@ -7,8 +7,8 @@ import { Cliente } from '../../../../../../src/app/interfaces/cliente.interface'
     <div *ngIf="visible" class="modal-backdrop">
       <div class="modal-content">
         <ng-content></ng-content>
-        <button (click)="close()">Fechar</button>
-        <button (click)="save.emit()">Salvar</button>
+        <ds-button class="margin-right-10 font-size-12" (click)="save.emit()" variant="secondary">Salvar</ds-button>
+        <ds-button (click)="close()">Fechar</ds-button>
       </div>
     </div>
   `,

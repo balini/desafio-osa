@@ -1,23 +1,37 @@
-<div class="header">
-  <ds-input placeholder="Buscar cliente" [(ngModel)]="searchTerm"></ds-input>
-  <ds-button variant="primary" (onClick)="openModal()">Adicionar Cliente</ds-button>
+<section>
+  <h3 class="margin-20">Gestão de clientes (Backoffice)</h3>
+</section>
+
+<div class="header margin-20">
+    <span>Buscar cliente</span>
+    <div class="margin-top-10">
+      <ds-input class="margin-right-10" placeholder="Buscar cliente" [(ngModel)]="searchTerm"></ds-input>
+      <ds-button variant="primary" (onClick)="openModal()">Adicionar Cliente</ds-button>
+    </div>
 </div>
 
 <ds-table [columns]="columns" [data]="filteredClientes()">
   <ng-template let-row let-i="index">
-    <ds-button variant="secondary" (onClick)="openModal(row)">
-      <i class="fa fa-edit"></i>
+    <ds-button class="margin-right-10" variant="secondary" (onClick)="openModal(row)">
+      <i class="fa fa-edit"></i><span>✎</span>
     </ds-button>
     <ds-button variant="danger" (onClick)="deleteCliente(row.id)">
-      <i class="fa fa-trash"></i>
+      <i class="fa fa-trash"></i><span>✖</span>
     </ds-button>
   </ng-template>
 </ds-table>
 
 <ds-modal [(visible)]="modalVisible" (save)="saveCliente()">
-  <ds-input placeholder="Nome" [(ngModel)]="editingCliente.nome"></ds-input>
-  <ds-input placeholder="Email" [(ngModel)]="editingCliente.email"></ds-input>
-  <ds-input placeholder="Telefone" [(ngModel)]="editingCliente.telefone"></ds-input>
-  <ds-input placeholder="Agência" [(ngModel)]="editingCliente.agencia"></ds-input>
-  <ds-input placeholder="Conta" [(ngModel)]="editingCliente.conta"></ds-input>
+  <div class="flex-column margin-bottom-10">
+    <span>Nome</span>
+    <ds-input class="margin-right-10" placeholder="Nome" [(ngModel)]="editingCliente.nome"></ds-input>
+    <span>E-mail</span>
+    <ds-input class="margin-right-10" placeholder="Email" [(ngModel)]="editingCliente.email"></ds-input>
+    <span>Telefone</span>
+    <ds-input class="margin-right-10" placeholder="Telefone" [(ngModel)]="editingCliente.telefone"></ds-input>
+    <span>Agência</span>
+    <ds-input class="margin-right-10" placeholder="Agência" [(ngModel)]="editingCliente.agencia"></ds-input>
+    <span>Conta</span>
+    <ds-input class="margin-right-10" placeholder="Conta" [(ngModel)]="editingCliente.conta"></ds-input>
+  </div>
 </ds-modal>

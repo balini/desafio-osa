@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "app": {
+    "osa": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -35,7 +35,8 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/design-system.css"
             ]
           },
           "configurations": {
@@ -66,10 +67,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "app:build:production"
+              "buildTarget": "osa:build:production"
             },
             "development": {
-              "buildTarget": "app:build:development"
+              "buildTarget": "osa:build:development"
             }
           },
           "defaultConfiguration": "development"

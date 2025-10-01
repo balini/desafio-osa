@@ -3,7 +3,7 @@ import { Component, Input, ContentChild, TemplateRef } from '@angular/core';
 @Component({
   selector: 'ds-table',
   template: `
-    <table class="ds-table">
+    <table class="ds-table margin-20 width-90">
       <thead>
         <tr>
           <th *ngFor="let col of columns">{{ col | titlecase }}</th>
@@ -12,7 +12,7 @@ import { Component, Input, ContentChild, TemplateRef } from '@angular/core';
       <tbody>
         <tr *ngFor="let row of data; let i = index">
           <td *ngFor="let col of columns">
-            <ng-container *ngIf="col === 'acoes' && actionsTemplate; else defaultCell">
+            <ng-container *ngIf="col === 'ações' && actionsTemplate; else defaultCell">
               <ng-container
                 *ngTemplateOutlet="actionsTemplate; context: { $implicit: row, index: i }"
               ></ng-container>
