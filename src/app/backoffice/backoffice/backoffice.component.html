@@ -1,0 +1,23 @@
+<div class="header">
+  <ds-input placeholder="Buscar cliente" [(ngModel)]="searchTerm"></ds-input>
+  <ds-button variant="primary" (onClick)="openModal()">Adicionar Cliente</ds-button>
+</div>
+
+<ds-table [columns]="columns" [data]="filteredClientes()">
+  <ng-template let-row let-i="index">
+    <ds-button variant="secondary" (onClick)="openModal(row)">
+      <i class="fa fa-edit"></i>
+    </ds-button>
+    <ds-button variant="danger" (onClick)="deleteCliente(row.id)">
+      <i class="fa fa-trash"></i>
+    </ds-button>
+  </ng-template>
+</ds-table>
+
+<ds-modal [(visible)]="modalVisible" (save)="saveCliente()">
+  <ds-input placeholder="Nome" [(ngModel)]="editingCliente.nome"></ds-input>
+  <ds-input placeholder="Email" [(ngModel)]="editingCliente.email"></ds-input>
+  <ds-input placeholder="Telefone" [(ngModel)]="editingCliente.telefone"></ds-input>
+  <ds-input placeholder="Agência" [(ngModel)]="editingCliente.agencia"></ds-input>
+  <ds-input placeholder="Conta" [(ngModel)]="editingCliente.conta"></ds-input>
+</ds-modal>

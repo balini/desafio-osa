@@ -1,8 +1,33 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Cliente } from '../interfaces/cliente.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class Client {
-  
+export class ClienteService {
+  private apiUrl = 'http://localhost:3000/clientes';
+
+  constructor(private http: HttpClient) {}
+
+  getAll(): Observable<Cliente[]> {
+    return this.http.get<Cliente[]>(this.apiUrl);
+  }
+
+  getById(id: number): Observable<Cliente> {
+    return this.http.get<Cliente>(`${this.apiUrl}/${id}`);
+  }
+
+  create(cliente: Cliente): Observable<Cliente> {
+    return this.http.post<Cliente>(this.apiUrl, cliente);
+  }
+
+  update(cliente: Cliente): Observable<Cliente> {
+    return this.http.put<Cliente>(`${this.apiUrl}/${cliente.id}`, cliente);
+  }
+
+  delete(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
 }

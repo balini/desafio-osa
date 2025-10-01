@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "json-server": "json-server --watch db.json --port 3000"
   },
   "prettier": {
     "printWidth": 100,
@@ -27,6 +28,7 @@
     "@angular/core": "^20.3.0",
     "@angular/forms": "^20.3.0",
     "@angular/platform-browser": "^20.3.0",
+    "@angular/platform-browser-dynamic": "^20.3.2",
     "@angular/router": "^20.3.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -43,6 +45,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "ng-packagr": "^20.3.0",
     "typescript": "~5.9.2"
   }
 }

@@ -1,0 +1,10 @@
+button {
+  border-radius: 6px;
+  padding: 8px 16px;
+  border: none;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  &.primary { background: #e60000; color: white; }
+  &.secondary { background: #64748b; color: white; }
+  &.danger { background: #dc2626; color: white; }
+}
