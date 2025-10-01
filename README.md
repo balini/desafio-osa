@@ -19,19 +19,20 @@ Trata-se de uma tela de backoffice com Angular, garantindo:
 
 ## 🏗 Estrutura do projeto
 
+```
 /src
-├─ /app
-│ ├─ /backoffice
-│ │ ├─ backoffice.component.ts
-│ │ ├─ backoffice.component.html
-│ │ └─ backoffice.component.css
-│ ├─ /lib
-│ │ └─ ds-input
-│ │ ├─ ds-input.component.ts
-│ │ └─ ds-input.component.html
-│ └─ app.component.ts
-└─ main.ts
-
+ ├─ /app
+ │   ├─ /backoffice
+ │   │   ├─ backoffice.component.ts
+ │   │   ├─ backoffice.component.html
+ │   │   └─ backoffice.component.css
+ │   ├─ /lib
+ │   │   └─ /ds-input
+ │   │       ├─ ds-input.component.ts
+ │   │       └─ ds-input.component.html
+ │   └─ app.component.ts
+ └─ main.ts
+ ```
 
 - **backoffice.component.ts** → componente principal da tela de backoffice, implementa CRUD e integração com `ClienteService`.
 - **ds-input.component.ts** → componente da biblioteca, oferece inputs customizados.
